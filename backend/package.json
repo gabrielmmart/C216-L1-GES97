@@ -1,10 +1,14 @@
 {
-  "name": "pratica-0",
+  "name": "pratica-2",
   "version": "1.0.0",
-  "description": "Projeto de exemplo para o C216-L1",
+  "description": "Middleware com restify.js",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "Não há testes configurados"
+  },
+  "dependencies": {
+    "restify": "^8.5.1"
   },
   "author": "Gabriel GES97",
   "license": "ISC"
