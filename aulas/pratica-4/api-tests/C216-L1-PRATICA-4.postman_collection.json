@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "92cba08c-88d5-4cdd-a4e4-bc6dc25a5afc",
+		"_postman_id": "d4217ddf-f9b5-437d-a7bc-e7eb6d9882ff",
 		"name": "C216-L1-PRATICA-4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "21142925"
+		"_exporter_id": "28241991"
 	},
 	"item": [
 		{
@@ -27,7 +27,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\":\"Lucas\",\r\n    \"curso\": \"GES\",\r\n    \"dataNascimento\": \"09/02/1992\"\r\n}",
+					"raw": "{\r\n    \"nome\":\"Professor Guilherme Abreu\",\r\n    \"disciplina\": \"Filosofia\",\r\n    \"email\": \"guilherabreu@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,7 +35,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/inserir",
+					"raw": "http://localhost:5000/api/v1/professor/inserir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -44,7 +44,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"inserir"
 					]
 				}
@@ -72,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\":\"Aluno\",\r\n    \"curso\": \"GES\",\r\n    \"dataNascimento\": \"09/05/1810\"\r\n}",
+					"raw": "{\r\n    \"nome\":\"Professor Joao Faria\",\r\n    \"disciplina\": \"Matematica\",\r\n    \"email\": \"joaojoao@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +80,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/inserir",
+					"raw": "http://localhost:5000/api/v1/professor/inserir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +89,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"inserir"
 					]
 				}
@@ -116,7 +116,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -125,7 +125,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
@@ -153,7 +153,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 2,\r\n    \"nome\":\"Pedro\",\r\n    \"curso\": \"GES\",\r\n    \"dataNascimento\": \"09/02/1998\"\r\n}",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"nome\":\"Joao José\",\r\n    \"disciplina\": \"Algebra\",\r\n    \"email\": \"joaojose@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -161,7 +161,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/atualizar",
+					"raw": "http://localhost:5000/api/v1/professor/atualizar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -170,7 +170,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"atualizar"
 					]
 				}
@@ -197,7 +197,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -206,7 +206,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
@@ -242,7 +242,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/excluir",
+					"raw": "http://localhost:5000/api/v1/professor/excluir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -251,7 +251,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"excluir"
 					]
 				}
@@ -278,7 +278,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -287,7 +287,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
@@ -359,7 +359,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/aluno/listar",
+					"raw": "http://localhost:5000/api/v1/professor/listar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -368,7 +368,7 @@
 					"path": [
 						"api",
 						"v1",
-						"aluno",
+						"professor",
 						"listar"
 					]
 				}
