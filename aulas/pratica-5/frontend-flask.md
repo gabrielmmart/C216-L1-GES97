@@ -59,7 +59,7 @@ O aplicativo será executado em `http://localhost:3000` por padrão. Você pode 
 
 ## Exercício proposto
 
-Faça a adaptação do frontend de alunos para professores. Execute o projeto com docker-compose, tire prints de cada passo sinalizado abaixo e salve os prints na pasta img da pratica 5.
+Faça a adaptação do frontend de professores para professores. Execute o projeto com docker-compose, tire prints de cada passo sinalizado abaixo e salve os prints na pasta img da pratica 5.
 
 ### Passos
 1. Página inicial (print)

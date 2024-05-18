@@ -32,7 +32,7 @@ def inserir_professor():
     }
 
     response = requests.post(f'{API_BASE_URL}/inserir', json=payload)
-    
+
     if response.status_code == 201:
         return redirect(url_for('listar_professores'))
     else:
@@ -71,7 +71,7 @@ def atualizar_professor(professor_id):
     }
 
     response = requests.post(f"{API_BASE_URL}/atualizar", json=payload)
-    
+
     if response.status_code == 200:
         return redirect(url_for('listar_professores'))
     else:
@@ -84,7 +84,7 @@ def excluir_professor(professor_id):
     payload = {'id': professor_id}
 
     response = requests.post(f"{API_BASE_URL}/excluir", json=payload)
-    
+
     if response.status_code == 200  :
         return redirect(url_for('listar_professores'))
     else:
@@ -94,7 +94,7 @@ def excluir_professor(professor_id):
 @app.route('/reset-database', methods=['GET'])
 def resetar_database():
     response = requests.delete(API_DATABASE_RESET)
-    
+
     if response.status_code == 200  :
         return redirect(url_for('index'))
     else:

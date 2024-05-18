@@ -17,15 +17,15 @@ Vamos abordar os métodos HTTP básicos utilizados em arquiteturas REST (Represe
 
 ## Métodos HTTP Básicos
 
-1. **GET**: O método GET solicita a representação de um recurso específico. Requisições GET devem apenas recuperar dados e não devem causar efeitos colaterais no servidor.
+1. **GET**: O método GET solicita a representação de um redisciplina específico. Requisições GET devem apenas recuperar dados e não devem causar efeitos colaterais no servidor.
 
-2. **POST**: O método POST é usado para enviar dados para o servidor para criar um novo recurso.
+2. **POST**: O método POST é usado para enviar dados para o servidor para criar um novo redisciplina.
 
-3. **PUT**: O método PUT substitui todas as atuais representações do recurso de destino pela carga de dados da requisição.
+3. **PUT**: O método PUT substitui todas as atuais representações do redisciplina de destino pela carga de dados da requisição.
 
-4. **DELETE**: O método DELETE remove um recurso específico do servidor.
+4. **DELETE**: O método DELETE remove um redisciplina específico do servidor.
 
-5. **PATCH**: O método PATCH é usado para aplicar modificações parciais em um recurso.
+5. **PATCH**: O método PATCH é usado para aplicar modificações parciais em um redisciplina.
 
 ## Exemplos em Node.js com Restify
 
