@@ -35,13 +35,13 @@ server.use(restify.plugins.bodyParser());
 
 // Endpoint para inserir um novo aluno
 server.post('/api/v1/aluno/inserir', (req, res, next) => {
-    const { nome, curso, dataNascimento } = req.body;
+    const { nome, disciplina, dataNascimento } = req.body;
 
     // Simulação de inserção no banco de dados
     const novoAluno = {
         id: alunos.length + 1, // Simulação de um ID único
         nome,
-        curso,
+        disciplina,
         dataNascimento
     };
 
@@ -59,13 +59,13 @@ server.get('/api/v1/aluno/listar', (req, res, next) => {
 
 // Endpoint para atualizar um aluno existente
 server.post('/api/v1/aluno/atualizar', (req, res, next) => {
-    const { id, nome, curso, dataNascimento } = req.body;
+    const { id, nome, disciplina, dataNascimento } = req.body;
 
     const alunoIndex = alunos.findIndex(aluno => aluno.id === id);
     if (alunoIndex === -1) {
         res.send(404, { message: 'Aluno não encontrado' });
     } else {
-        alunos[alunoIndex] = { id, nome, curso, dataNascimento };
+        alunos[alunoIndex] = { id, nome, disciplina, dataNascimento };
         res.send(200, alunos[alunoIndex]);
     }
 

@@ -58,7 +58,7 @@ var server = restify.createServer({
 async function initDatabase() {
     try {
         await pool.query('DROP TABLE IF EXISTS alunos');
-        await pool.query('CREATE TABLE IF NOT EXISTS alunos (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, curso VARCHAR(255) NOT NULL, data_nascimento VARCHAR(255) NOT NULL)');
+        await pool.query('CREATE TABLE IF NOT EXISTS alunos (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, disciplina VARCHAR(255) NOT NULL, data_nascimento VARCHAR(255) NOT NULL)');
         console.log('Banco de dados inicializado com sucesso');
     } catch (error) {
         console.error('Erro ao iniciar o banco de dados, tentando novamente em 5 segundos:', error);
@@ -70,12 +70,12 @@ server.use(restify.plugins.bodyParser());
 
 // Endpoint para inserir um novo aluno
 server.post('/api/v1/aluno/inserir', async (req, res, next) => {
-    const { nome, curso, dataNascimento } = req.body;
+    const { nome, disciplina, dataNascimento } = req.body;
 
     try {
         const result = await pool.query(
-          'INSERT INTO alunos (nome, curso, data_nascimento) VALUES ($1, $2, $3) RETURNING *',
-          [nome, curso, dataNascimento]
+          'INSERT INTO alunos (nome, disciplina, data_nascimento) VALUES ($1, $2, $3) RETURNING *',
+          [nome, disciplina, dataNascimento]
         );
         res.send(201, result.rows[0]);
         console.log('Aluno inserido com sucesso:', result.rows[0]);
@@ -101,12 +101,12 @@ server.get('/api/v1/aluno/listar', async (req, res, next) => {
 
 // Endpoint para atualizar um aluno existente
 server.post('/api/v1/aluno/atualizar', async (req, res, next) => {
-    const { id, nome, curso, dataNascimento } = req.body;
+    const { id, nome, disciplina, dataNascimento } = req.body;
   
     try {
       const result = await pool.query(
-        'UPDATE alunos SET nome = $1, curso = $2, data_nascimento = $3 WHERE id = $4 RETURNING *',
-        [nome, curso, dataNascimento, id]
+        'UPDATE alunos SET nome = $1, disciplina = $2, data_nascimento = $3 WHERE id = $4 RETURNING *',
+        [nome, disciplina, dataNascimento, id]
       );
       if (result.rowCount === 0) {
         res.send(404, { message: 'Aluno não encontrado' });
@@ -145,7 +145,7 @@ server.post('/api/v1/aluno/excluir', async (req, res, next) => {
 server.del('/api/v1/database/reset', async (req, res, next) => {
     try {
       await pool.query('DROP TABLE IF EXISTS alunos');
-      await pool.query('CREATE TABLE alunos (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, curso VARCHAR(255) NOT NULL, data_nascimento VARCHAR(255) NOT NULL)');
+      await pool.query('CREATE TABLE alunos (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, disciplina VARCHAR(255) NOT NULL, data_nascimento VARCHAR(255) NOT NULL)');
       res.send(200, { message: 'Banco de dados resetado com sucesso' });
       console.log('Banco de dados resetado com sucesso');
     } catch (error) {
@@ -224,7 +224,7 @@ volumes:
 CREATE TABLE alunos (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
-  curso VARCHAR(255) NOT NULL,
+  disciplina VARCHAR(255) NOT NULL,
   data_nascimento VARCHAR(255) NOT NULL
 )
 ```
